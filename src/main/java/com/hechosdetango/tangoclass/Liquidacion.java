@@ -1,41 +1,70 @@
 /* ********************************************************************************************************
         Universidad Siglo 21
         Seminario de Práctica de Informática
-        Trabajo Práctico 3
+        Trabajo Práctico 4
 
         Proyecto: T A N G O C L A S S
         Alumno:   Ariel Delaloye
         Legajo:   VINF011381
-        Octubre de 2024
+        Noviembre de 2024
 ******************************************************************************************************** */
 package com.hechosdetango.tangoclass;
 
+import javafx.beans.property.*;
 import java.util.Date;
 
 public class Liquidacion {
-    private int idLiquidacion;            // IDLiquidacion (Primary Key)
-    private int idTaller;                 // ID del taller que se liquida
-    private double liqIngresosTaller;     // Ingresos generados por el taller en el periodo a liquidar
-    private double liqComisionDocente;    // Comisión a pagarle al docente
-    private double liqImporteLiquidar;    // Importe final a liquidar
-    private Date liqFechaPago;            // Fecha en que se pago el importe de la liquidacion
-    private String liqEstado;             // Estado de la liquidación (pendiente, pagada)
+    private IntegerProperty idLiquidacion;
+    private IntegerProperty idTaller;
+    private DoubleProperty liqIngresosTaller;
+    private DoubleProperty liqComisionDocente;
+    private DoubleProperty liqImporteLiquidar;
+    private ObjectProperty<Date> liqFechaPago;
+    private StringProperty liqEstado;
 
-    // Constructor vacío
-    public Liquidacion() {}
-
-    // Constructor con parámetros
-    public Liquidacion(int idLiquidacion, int idTaller, double liqIngresosTaller,
-                       double liqComisionDocente, double liqImporteLiquidar, Date liqFechaPago,
-                       String liqEstado) {
-        this.idLiquidacion = idLiquidacion;
-        this.idTaller = idTaller;
-        this.liqIngresosTaller = liqIngresosTaller;
-        this.liqComisionDocente = liqComisionDocente;
-        this.liqImporteLiquidar = liqImporteLiquidar;
-        this.liqFechaPago = liqFechaPago;
-        this.liqEstado = liqEstado;
+    // Constructor
+    public Liquidacion() {
+        this.idLiquidacion = new SimpleIntegerProperty();
+        this.idTaller = new SimpleIntegerProperty();
+        this.liqIngresosTaller = new SimpleDoubleProperty();
+        this.liqComisionDocente = new SimpleDoubleProperty();
+        this.liqImporteLiquidar = new SimpleDoubleProperty();
+        this.liqFechaPago = new SimpleObjectProperty<>();
+        this.liqEstado = new SimpleStringProperty();
     }
 
-    // Falta desarrollar: Getters y Setters ------->
+    // Getters y Setters para las propiedades
+
+    public IntegerProperty idLiquidacionProperty() {return idLiquidacion;}
+    public int getIdLiquidacion() {return idLiquidacion.get();}
+    public void setIdLiquidacion(int idLiquidacion) {this.idLiquidacion.set(idLiquidacion);}
+
+
+    public IntegerProperty idTallerProperty() {return idTaller;}
+    public int getIdTaller() {return idTaller.get();}
+    public void setIdTaller(int idTaller) {this.idTaller.set(idTaller);}
+
+
+    public DoubleProperty liqIngresosTallerProperty() {return liqIngresosTaller;}
+    public double getLiqIngresosTaller() {return liqIngresosTaller.get();}
+    public void setLiqIngresosTaller(double liqIngresosTaller) {this.liqIngresosTaller.set(liqIngresosTaller);}
+
+
+    public DoubleProperty liqComisionDocenteProperty() {return liqComisionDocente;}
+    public double getLiqComisionDocente() {return liqComisionDocente.get();}
+    public void setLiqComisionDocente(double liqComisionDocente) {this.liqComisionDocente.set(liqComisionDocente);}
+
+
+    public DoubleProperty liqImporteLiquidarProperty() {return liqImporteLiquidar;}
+    public double getLiqImporteLiquidar() {return liqImporteLiquidar.get();}
+    public void setLiqImporteLiquidar(double liqImporteLiquidar) {this.liqImporteLiquidar.set(liqImporteLiquidar);}
+
+    public ObjectProperty<Date> liqFechaPagoProperty() {return liqFechaPago;}
+    public Date getLiqFechaPago() {return liqFechaPago.get();}
+    public void setLiqFechaPago(Date liqFechaPago) {this.liqFechaPago.set(liqFechaPago);}
+
+
+    public StringProperty liqEstadoProperty() {return liqEstado;}
+    public String getLiqEstado() {return liqEstado.get();}
+    public void setLiqEstado(String liqEstado) {this.liqEstado.set(liqEstado);}
 }

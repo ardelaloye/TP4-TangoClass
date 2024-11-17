@@ -1,12 +1,12 @@
 /* ********************************************************************************************************
         Universidad Siglo 21
         Seminario de Práctica de Informática
-        Trabajo Práctico 3
+        Trabajo Práctico 4
 
         Proyecto: T A N G O C L A S S
         Alumno:   Ariel Delaloye
         Legajo:   VINF011381
-        Octubre de 2024
+        Noviembre de 2024
 ******************************************************************************************************** */
 package com.hechosdetango.tangoclass;
 
@@ -18,7 +18,7 @@ import javafx.beans.property.StringProperty;
 import java.util.Date;
 
 public class Alumno {
-    private int idAlumno; // IDAlumno (Primary Key)
+    private int idAlumno; // Primary Key
     private SimpleStringProperty aluApellido;
     private SimpleStringProperty aluNombre;
     private SimpleStringProperty aluDNI;
@@ -40,24 +40,17 @@ public class Alumno {
         this.aluEstado = new SimpleStringProperty();
     }
 
+    @Override
+    public String toString() {return String.valueOf(aluNombre + " " + aluApellido);}
+
     // Getters y Setters
-    public int getIdAlumno() {
-        return idAlumno;
-    }
-    public void setIdAlumno(int idAlumno) {
-        this.idAlumno = idAlumno;
-    }
+    public int getIdAlumno() {return idAlumno;}
+    public void setIdAlumno(int idAlumno) {this.idAlumno = idAlumno;}
 
 
-    public String getAluApellido() {
-        return aluApellido.get();
-    }
-    public void setAluApellido(String aluApellido) {
-        this.aluApellido.set(aluApellido);
-    }
-    public StringProperty aluApellidoProperty() {
-        return aluApellido;
-    }
+    public String getAluApellido() {return aluApellido.get();}
+    public void setAluApellido(String aluApellido) {this.aluApellido.set(aluApellido);}
+    public StringProperty aluApellidoProperty() {return aluApellido;}
 
     public String getAluNombre() {
         return aluNombre.get();
@@ -72,9 +65,7 @@ public class Alumno {
     public String getAluDNI() {
         return aluDNI.get();
     }
-    public void setAluDNI(String aluDNI) {
-        this.aluDNI.set(aluDNI);
-    }
+    public void setAluDNI(String aluDNI) {this.aluDNI.set(aluDNI);}
     public StringProperty aluDNIProperty() {
         return aluDNI;
     }
@@ -99,15 +90,11 @@ public class Alumno {
         return aluDomicilio;
     }
 
-    public String getAluTelefono() {
-        return aluTelefono.get();
-    }
+    public String getAluTelefono() {return aluTelefono.get();}
     public void setAluTelefono(String aluTelefono) {
         this.aluTelefono.set(aluTelefono);
     }
-    public StringProperty aluTelefonoProperty() {
-        return aluTelefono;
-    }
+    public StringProperty aluTelefonoProperty() {return aluTelefono;}
 
     public String getAluEmail() {
         return aluEmail.get();
@@ -128,5 +115,7 @@ public class Alumno {
     public StringProperty aluEstadoProperty() {
         return aluEstado;
     }
+
+    public String getAluNomAp() {return aluNombre.get() + " " + aluApellido.get();}
 
 }

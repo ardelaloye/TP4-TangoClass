@@ -1,12 +1,12 @@
 /* ********************************************************************************************************
         Universidad Siglo 21
         Seminario de Práctica de Informática
-        Trabajo Práctico 3
+        Trabajo Práctico 4
 
         Proyecto: T A N G O C L A S S
         Alumno:   Ariel Delaloye
         Legajo:   VINF011381
-        Octubre de 2024
+        Noviembre de 2024
 ******************************************************************************************************** */
 package com.hechosdetango.tangoclass;
 
@@ -16,10 +16,10 @@ import java.util.Date;
 
 public class ValoresTaller {
     private IntegerProperty idValoresTaller; // Primary Key
-    private IntegerProperty idTaller;           // Foreign Key
-    private ObjectProperty<Date> valFechaDesde; // Fecha de entrada en vigencia del costo
-    private ObjectProperty<Date> valFechaHasta; // Fecha de fin de vigencia del costo
-    private DoubleProperty valImporte;  // Costo del taller
+    private IntegerProperty idTaller;
+    private ObjectProperty<Date> valFechaDesde;
+    private ObjectProperty<Date> valFechaHasta;
+    private DoubleProperty valImporte;
 
     // Constructor vacío
     public ValoresTaller() {

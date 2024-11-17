@@ -1,12 +1,12 @@
 /* ********************************************************************************************************
         Universidad Siglo 21
         Seminario de Práctica de Informática
-        Trabajo Práctico 3
+        Trabajo Práctico 4
 
         Proyecto: T A N G O C L A S S
         Alumno:   Ariel Delaloye
         Legajo:   VINF011381
-        Octubre de 2024
+        Noviembre de 2024
 ******************************************************************************************************** */
 package com.hechosdetango.tangoclass;
 
@@ -104,53 +104,64 @@ public class TangoClass extends Application {
         botones[1].setOnAction(e -> gestionarTalleres(primaryStage));
         botones[2].setOnAction(e -> gestionarDocentes(primaryStage));
         botones[3].setOnAction(e -> gestionarInscripciones(primaryStage));
-        botones[4].setOnAction(e -> gestionarCuotas());
-        botones[5].setOnAction(e -> gestionarClases());
-        botones[6].setOnAction(e -> gestionarLiquidaciones());
+        botones[4].setOnAction(e -> gestionarCuotas(primaryStage));
+        botones[5].setOnAction(e -> gestionarClases(primaryStage));
+        botones[6].setOnAction(e -> gestionarLiquidaciones(primaryStage));
 
         // Acción para el botón "Acerca De"
         botones[7].setOnAction(e -> mostrarInfo());
 
         // Acción para el botón "Salir"
         botones[8].setOnAction(e -> primaryStage.close());
+
+        // Si hay algo aún no desarrollado, inhabilitamos el botón correspondiente
+        //botones[1].setDisable(true);
+        //botones[2].setDisable(true);
+        //botones[3].setDisable(true);
+        //botones[4].setDisable(true);
+        //botones[5].setDisable(true);
+        //botones[6].setDisable(true);
     }
 
     // Acciones de los botones
     private void gestionarAlumnos(Stage primaryStage) {
-        System.out.println("Gestión de Alumnos");
+        //System.out.println("Gestión de Alumnos");
         new AlumnosGestion(primaryStage);
     }
 
     private void gestionarTalleres(Stage primaryStage) {
-        System.out.println("Gestión de Talleres");
-        new TallerGestion(primaryStage);
+        //System.out.println("Gestión de Talleres");
+        new TalleresGestion(primaryStage);
     }
 
     private void gestionarDocentes(Stage primaryStage) {
-        System.out.println("Gestión de Docentes");
+        //System.out.println("Gestión de Docentes");
         new DocentesGestion(primaryStage);
     }
 
     private void gestionarInscripciones(Stage primaryStage) {
-        System.out.println("Gestión de Inscripciones (En desarrollo)");
+        //System.out.println("Gestión de Inscripciones");
         new InscripcionesGestion(primaryStage);
     }
 
-    private void gestionarCuotas() {
-        System.out.println("Gestión de Cuotas (En desarrollo");
+    private void gestionarCuotas(Stage primaryStage) {
+        //System.out.println("Gestión de Cuotas");
+        new CuotasGestion(primaryStage);
     }
 
-    private void gestionarClases() {
-        System.out.println("Gestión de Clases (En desarrollo");
+    private void gestionarClases(Stage primaryStage) {
+        //System.out.println("Gestión de Clases");
+        new ClasesGestion(primaryStage);
     }
 
-    private void gestionarLiquidaciones() {
-        System.out.println("Gestión de Liquidaciones (En desarrollo)");
+    private void gestionarLiquidaciones(Stage primaryStage) {
+        //System.out.println("Gestión de Liquidaciones");
+        new LiquidacionesGestion(primaryStage);
     }
 
     // Mostrar Info
     private void mostrarInfo() {
-            mostrarAlerta("Acerca de...", "TangoClass. Desarrollado por Ariel Delaloye (VINF011381), para el TP3 del Seminario de Práctica de Informática, Universidad Siglo 21, Octubre de 2024");
+        mostrarAlerta("Acerca de...", "TangoClass. Desarrollado por Ariel Delaloye (VINF011381), para la materia Seminario de Práctica de Informática, Universidad Siglo 21, Segundo Semestre 2024");
     }
 
     // Para mostrar mensajes en pantalla

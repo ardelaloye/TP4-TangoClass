@@ -1,16 +1,17 @@
 /* ********************************************************************************************************
         Universidad Siglo 21
         Seminario de Práctica de Informática
-        Trabajo Práctico 3
+        Trabajo Práctico 4
 
         Proyecto: T A N G O C L A S S
         Alumno:   Ariel Delaloye
         Legajo:   VINF011381
-        Octubre de 2024
+        Noviembre de 2024
 ******************************************************************************************************** */
 package com.hechosdetango.tangoclass;
 
 import javafx.beans.property.*;
+
 import java.util.Date;
 
 public class Taller {
@@ -19,7 +20,7 @@ public class Taller {
     private ObjectProperty<Date> talFechaInicio;
     private ObjectProperty<Date> talFechaCierre;
     private IntegerProperty talCupoMaximo;
-    private IntegerProperty idDocente;          // ID del docente que impartirá el taller
+    private IntegerProperty idDocente;
     private DoubleProperty talComisionDocente;
     private StringProperty talEstado;
 
@@ -32,6 +33,11 @@ public class Taller {
         this.idDocente = new SimpleIntegerProperty();
         this.talComisionDocente = new SimpleDoubleProperty();
         this.talEstado = new SimpleStringProperty();
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(talNombre);
     }
 
     // Getters y Setters ---->
